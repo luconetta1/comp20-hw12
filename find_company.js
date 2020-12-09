@@ -89,14 +89,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
                     //console.log(items.length);
                     console.log(set_string1);
                     res.send(set_string2);
-                //db.close();
+
               });
 
     	  }
 
     	});
 
-
+        db.close();
     });
 
     app.post("/tick", function (req, res) {
@@ -117,9 +117,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
               //console.log(items.length);
               console.log(set_string1);
               res.send(set_string2);
-          //db.close();
-        });
 
+        });
+        db.close();
 });
 
 });

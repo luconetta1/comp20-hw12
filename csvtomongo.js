@@ -10,13 +10,17 @@ csvtojson().fromFile("companies-1.csv").then(csvData => {
     MongoClient.connect(url,
         { useNewUrlParser: true, useUnifiedTopology: true },
       (err, client) => {
-        if (err) throw err;
+          if (err) {
+            console.log("Error: " + err);
+            process.exit();
+          }
 
         client.db("companies").collection("companies")
             .insertMany(csvData, (err, res) => {
-            if (err) throw err;
-
-            //console.log(`Inserted: ${res.insertedCount} rows`);
+                if (err) {
+                  console.log("Error: " + err);
+                  process.exit();
+                }
             client.close();
           });
       }
