@@ -5,6 +5,7 @@
   "main": "find_company.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node find_company.js"
   },
   "author": "",
   "license": "ISC"
